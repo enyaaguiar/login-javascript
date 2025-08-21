@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,14 +7,30 @@
   <title>Sistema de Login</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
+    margin: 0;
+    height: 100vh;
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #131313;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    background-size: 100% 200%;
+    animation: mexeMexa 6s ease-in-out infinite alternate;
+}
+
+@keyframes mexeMexa {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+
 
     .login-container {
       background: #fff;
@@ -26,7 +43,8 @@
 
     .login-container h2 {
       margin-bottom: 20px;
-      color: #333;
+      font-size: xx-large;
+      color: #080707;
     }
 
     .login-container input {
@@ -34,14 +52,14 @@
       padding: 10px;
       margin: 10px 0;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #000000;
       font-size: 14px;
     }
 
     .login-container button {
       width: 100%;
       padding: 12px;
-      background: #2575fc;
+      background: #1223e0;
       color: white;
       font-size: 16px;
       font-weight: bold;
@@ -52,7 +70,7 @@
     }
 
     .login-container button:hover {
-      background: #1a5edb;
+      background: #333944;
     }
 
     .message {
@@ -81,8 +99,8 @@
 
   <script>
 
-    const usuarios = ["admin", "diogo", "joao"];
-    const senhas = ["12345", "dasrave", "senha123"];
+    const usuarios = ["admin", "diogo", "enya", "rafael", "joao"];
+    const senhas = ["12345", "dasrave","type","junior","senha123"];
 
     function login() {
       const usuario = document.getElementById("username").value;
@@ -98,14 +116,22 @@
         }
       }
 
-      if (loginValido) {
-        mensagem.textContent = "✅ Login realizado com sucesso!";
+       if (loginValido) {
+        mensagem.textContent = "✅ Login realizado com sucesso! Redirecionando...";
         mensagem.className = "message success";
-      } else {
+
+        setTimeout(() => {
+          mensagem.textContent = "";
+          window.location.href = "bemvindo.html"; 
+        }, 3000);
+       } 
+       else {
         mensagem.textContent = "❌ Usuário ou senha incorretos!";
         mensagem.className = "message error";
+        setTimeout(() => mensagem.textContent = "", 5000);
       }
     }
+
   </script>
 </body>
 </html>
