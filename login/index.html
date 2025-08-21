@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #2575fc;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #1a5edb;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Usuário">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+
+    const usuarios = ["admin", "diogo", "joao"];
+    const senhas = ["12345", "dasrave", "senha123"];
+
+    function login() {
+      const usuario = document.getElementById("username").value;
+      const senha = document.getElementById("password").value;
+      const mensagem = document.getElementById("message");
+
+
+      let loginValido = false;
+      for (let i = 0; i < usuarios.length; i++) {
+        if (usuario === usuarios[i] && senha === senhas[i]) {
+          loginValido = true;
+          break;
+        }
+      }
+
+      if (loginValido) {
+        mensagem.textContent = "✅ Login realizado com sucesso!";
+        mensagem.className = "message success";
+      } else {
+        mensagem.textContent = "❌ Usuário ou senha incorretos!";
+        mensagem.className = "message error";
+      }
+    }
+  </script>
+</body>
+</html>
