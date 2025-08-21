@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo</title>
+  <style>
+    body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    background-size: 100% 200%;
+    animation: rodaJequiti 3s ease-in-out infinite alternate;
+    }
+    @keyframes rodaJequiti
+    {
+      0% {
+        background-position: top;
+      }
+      100% {
+        background-position: bottom;
+      }
+    }
+
+    .container {
+      background: rgba(0,0,0,0.5);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #1223e0;
+      color: rgb(245, 244, 244);
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao Sistema!</h1>
+    <p>Login realizado com sucesso.</p>
+    <a href="login.html">Sair</a>
+  </div>
+</body>
+</html>
